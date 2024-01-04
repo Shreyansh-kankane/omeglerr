@@ -1,4 +1,6 @@
+
 import type { Metadata } from 'next'
+import { CallContextProvider } from '@/context/CallContext'
 
 export const metadata: Metadata = {
   title: 'Create Next App',

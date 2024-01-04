@@ -1,13 +1,11 @@
-'use client'
 import React from 'react'
 import Brand from '@/components/Brand'
 import Navbar from '@/components/Navbar'
 import Button from '@/utils/Button'
-import { useRouter } from 'next/router'
 
 function Home() {
   return (
-    <div>
+    <div className=''>
       <Brand className='text-5xl text-center'/>
       <div className='text-center mt-2'>
         <p className='text-[#5f6d80] italic '>The most trustable Online Chatting Platform to help people connect anonymmously</p>
@@ -32,7 +30,6 @@ function Home() {
         <Button className='w-[200px]' >Chat Online</Button>
         <Button className=''>Vedio Chat Online</Button>
       </div>
-      
      </div>
   )
 }
