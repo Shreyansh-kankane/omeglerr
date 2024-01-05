@@ -7,7 +7,7 @@ interface BrandProps {
 
 function Brand({className}: BrandProps) {
   return (
-    <h1 className={`text-orange-400 font-bold m-3 ${className}`}>Omeglee</h1>
+    <h1 className={`text-orange-400 font-bold ${className}`}>Omeglee</h1>
   )
 }
 

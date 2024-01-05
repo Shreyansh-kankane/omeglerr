@@ -9,15 +9,16 @@ function Sidebar() {
   const [idToCall, setIdToCall] = useState('');
 
   return (
-    <div className='flex flex-col justify-between bg-[#FFF7EE] w-[200px] h-[calc(100vh-60px)]'>
+    <div className='hidden md:flex md:flex-col w-1/4 justify-between bg-[#FFF7EE]'>
 
-      <div className=''>
+      <div className='w-full'>
+
         Your id: <span className='font-bold'>{me}</span>
         <p>Make Call</p>
         <input type="text" 
           value={idToCall}
           onChange={(e) => setIdToCall(e.target.value)}
-          className='border border-gray-300 p-1 rounded-md w-full'
+          className='border border-gray-300 p-1 rounded-md w-auto'
           placeholder='Enter ID to call'
         />
         {callAccepted && !callEnded ? (

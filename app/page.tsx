@@ -27,8 +27,12 @@ function Home() {
       </div>
 
       <div className='flex justify-center gap-5'>
-        <Button className='w-[200px]' >Chat Online</Button>
-        <Button className=''>Vedio Chat Online</Button>
+        <button className='bg-[#3c99fc] text-white rounded-md p-3 font-bold'>
+          Chat Online
+        </button>
+        <button className='bg-[#3c99fc] text-white rounded-md p-3 font-bold'>
+          Vedio Chat Online
+        </button>
       </div>
      </div>
   )

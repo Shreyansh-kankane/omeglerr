@@ -4,13 +4,9 @@ import VedioPlayer from '@/components/VideoPlayer';
 
 function Vichat() {
   return (
-    <div className='flex-1 flex overflow-y-hidden'>
-        <div className='flex-1'>
-            <VedioPlayer/>
-        </div>
-        <div>
-            <Chat/>
-        </div>
+    <div className='flex-1 h-full w-full flex flex-col sm:flex-row overflow-hidden'>
+        <VedioPlayer />
+        <Chat />
     </div>
   )
 }

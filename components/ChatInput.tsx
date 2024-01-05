@@ -1,13 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { IoMdSend } from 'react-icons/io';
-import { useRef } from 'react';
 import { useCallContext } from '@/context/CallContext';
 
-
 const ChatInput = () => {
-
-  const { sendMessage } = useCallContext();
-
+  const { callEnded,callAccepted, sendMessage } = useCallContext();
   const inputRef = useRef<HTMLInputElement>(null);
 
   const onSendMessage = () => {
@@ -15,15 +11,38 @@ const ChatInput = () => {
       return;
     }
     sendMessage(inputRef.current?.value);
-  }
+    inputRef.current!.value = '';
+  };
 
   return (
-    <div className='flex items-center p-2 space-x-3 absolute bottom-3'>
+    <div className='flex items-center w-full h-fit p-2 mt-2 space-x-3 absolute bottom-0'>
+
+    {
+      callAccepted && !callEnded ? (
+        <button 
+          className='bg-slate-400 text-white p-2 rounded-md mt-2'
+        >
+          Stop
+        </button>
+      ) : (
+        <button 
+          className='bg-sky-500 text-white p-2 rounded-md mt-2'
+        >
+          New
+        </button>
+      )
+    }
+
       <input
         type='text'
         placeholder='Type a message'
         className='w-[90%] p-2 rounded-md border border-gray-300'
         ref={inputRef}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            onSendMessage();
+          }
+        }}
       />
       <IoMdSend className='text-2xl text-[#5f6d80] cursor-pointer' onClick={onSendMessage} />
     </div>
@@ -31,3 +50,4 @@ const ChatInput = () => {
 };
 
 export default ChatInput;
+

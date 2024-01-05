@@ -30,6 +30,12 @@ const CallContextProvider = ({ children }) => {
         if(myVideo.current){
             myVideo.current.srcObject = currentStream;
         }
+        else {
+          setTimeout(() => {
+            setStream(currentStream);
+            myVideo.current.srcObject = currentStream;
+          },1000)
+        }
       });
   }, []);
 
