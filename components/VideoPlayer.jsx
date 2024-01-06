@@ -1,75 +1,7 @@
 'use client'
-// import { BiSolidHide } from "react-icons/bi"
-// import { CiVideoOff } from "react-icons/ci"
-// import { CiVideoOn } from "react-icons/ci"
-// import { CiMicrophoneOff } from "react-icons/ci";
-// import { CiMicrophoneOn } from "react-icons/ci";
-
-// import { useCallContext } from "@/context/CallContext";
-
-// function VedioPlayer() {
-
-//   const {me, callAccepted, myVideo, userVideo, callEnded, stream } = useCallContext();
-
-//   return (
-//     <div className='h-[calc(95vh-60px)] m-4 overflow-auto relative'>
-  
-//         {callAccepted && !callEnded ? (
-
-//           <div className="w-full h-full absolute top-0 left-0">
-
-//             <video className='w-full h-full p-0 rounded-lg border-1 shadow-xl object-fill' playsInline ref={userVideo} autoPlay muted/>
-
-//             <div className="absolute w-2/3 h-2/3 top-0 right-0 z-10 p-2 bg-white ">
-//               <div className="relative h-full w-full" >
-//                 { stream &&
-//                   <video className='h-full w-full p-0 rounded-lg border-1 shadow-xl object-fill z-50' playsInline muted ref={myVideo} autoPlay />
-//                 }
-//                 <div className='absolute bottom-3 w-full flex justify-center gap-3'>
-//                   <button 
-//                     className='border-2  rounded-full p-2 text-[#ab5438] flex items-center justify-center'>
-//                     <CiVideoOff className='text-2xl'/>
-//                   </button>
-//                   <button 
-//                     className='border rounded-full p-2 text-[#ab5438] flex items-center justify-center'>
-//                     <CiMicrophoneOff className='text-2xl'/>
-//                   </button>
-//                 </div>
-//               </div>
-//             </div>
-
-//           </div>
-
-//         )
-        
-//         :(
-//           <div className="h-full w-full" >
-//             {stream && 
-//               <video className='h-full w-full p-0 rounded-lg border-1 shadow-xl' playsInline muted ref={myVideo} autoPlay />
-//             }
-//             <div className='absolute bottom-3 w-full flex justify-center gap-3'>
-//               <button 
-//                 className='border-2  rounded-full p-2 text-[#ab5438] flex items-center justify-center'>
-//                 <CiVideoOff className='text-2xl'/>
-//               </button>
-//               <button 
-//                 className='border rounded-full p-2 text-[#ab5438] flex items-center justify-center'>
-//                 <CiMicrophoneOff className='text-2xl'/>
-//               </button>
-//             </div>
-//           </div>
-//         )
-//     }
-//     </div>
-//   )
-// }
-
-// export default VedioPlayer;
-
 import React from 'react';
 import { CiVideoOff, CiMicrophoneOff } from 'react-icons/ci';
 import { useCallContext } from '@/context/CallContext';
-import MyVideo from './MyVideo';
 
 function VideoPlayer() {
   const { callAccepted, myVideo, userVideo, callEnded, stream } = useCallContext();
@@ -80,7 +12,7 @@ function VideoPlayer() {
       {/* My vedio  */}
       <div 
         className={` 
-        ${callAccepted && !callEnded ?  'absolute top-0 right-0 w-1/3 h-1/3 z-10 ': 'h-full w-full mb-2 p-0'}
+        ${callAccepted && !callEnded ?  'absolute top-0 right-0 w-1/4 h-1/4 z-10': 'w-full object-fill mb-2 p-0'}
 
         `}
       >
@@ -93,7 +25,7 @@ function VideoPlayer() {
       {callAccepted && !callEnded && <div
         className='absolute top-0 left-0 h-full w-full'
       >
-        <video playsInline autoPlay ref={userVideo} className=''></video>
+        <video muted playsInline autoPlay ref={userVideo} className='w-full object-fill'></video>
 
       </div> }
 

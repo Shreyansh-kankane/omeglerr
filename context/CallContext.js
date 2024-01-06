@@ -21,6 +21,7 @@ const CallContextProvider = ({ children }) => {
   const userVideo = useRef();
   const connectionRef = useRef();
 
+
   useEffect(() => {
     navigator.mediaDevices.getUserMedia({ video: true, audio: true })
       .then((currentStream) => {

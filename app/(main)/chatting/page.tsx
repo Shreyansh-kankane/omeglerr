@@ -14,13 +14,13 @@ function Chatting() {
 
         <div className='flex items-center justify-start gap-4 m-2 flex-auto pl-4 p-3'>       
           <h1 className={`text-orange-400 font-bold ml-4 text-3xl `}>Omeglee</h1>
-          <h3 className='italic font-bold'>Talk with Strangers</h3>
+          <h3 className='hidden sm:block italic font-bold'>Talk with Strangers</h3>
         </div>
 
         <div className='flex justify-end items-center gap-3  m-2'>
           <Link href={'/'} className='hover:underline text-orange-600'>Home</Link>
           <Link href={'/about'} className='hover:underline text-orange-600'>About</Link>
-          <Link href={'/chat'} className='hover:underline text-orange-600'>Text-Chat</Link>
+          <Link href={'/text'} className='hover:underline text-orange-600'>Text-Chat</Link>
 
           <button className='hidden md:block p-2 bg-orange-500 mr-2 text-white rounded-lg'
             >Next Room/ Spacebar 
