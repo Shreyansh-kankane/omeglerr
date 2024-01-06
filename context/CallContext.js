@@ -6,6 +6,8 @@ import Peer from 'simple-peer';
 const SocketContext = createContext();
 
 
+const socket = io(process.env.NEXT_PUBLIC_SERVER_URL);
+
 const CallContextProvider = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false);
   const [callEnded, setCallEnded] = useState(false);
@@ -36,9 +38,13 @@ const CallContextProvider = ({ children }) => {
       });
   }, []);
 
-  const socket = io(process.env.NEXT_PUBLIC_SERVER_URL, { query: { myId: '' } } );
+  useEffect(() => {
+    socket.emit("getMe");
+  },[])
+  
 
   useEffect(() => {
+    
     socket.on('me', (id) => setMe(id));
 
     socket.on('callUser', ({ from, signal }) => {

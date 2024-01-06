@@ -15,14 +15,13 @@ const io = socket(server,{
 
 
 io.on("connection",socket => {
-  const myId = socket.handshake.query.myId;
+  
+  socket.emit("me",socket.id);
 
-  if(myId == ''){
+  socket.on("getMe",()=>{
     socket.emit("me",socket.id);
-  }
-  else {
-    socket.emit("me",myId);
-  }
+  
+  })
 
   socket.on("disconnect",() => {
     socket.broadcast.emit("callEnded")
