@@ -5,9 +5,6 @@ import Peer from 'simple-peer';
 
 const SocketContext = createContext();
 
-const initialMe = localStorage.getItem('myId') || '';
-
-const socket = io('http://localhost:5000', { query: { myId: initialMe } } );
 
 const CallContextProvider = ({ children }) => {
   const [callAccepted, setCallAccepted] = useState(false);
@@ -38,6 +35,8 @@ const CallContextProvider = ({ children }) => {
         }
       });
   }, []);
+
+  const socket = io(process.env.NEXT_PUBLIC_SERVER_URL, { query: { myId: '' } } );
 
   useEffect(() => {
     socket.on('me', (id) => setMe(id));
