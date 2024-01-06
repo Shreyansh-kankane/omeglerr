@@ -25,7 +25,7 @@ function VideoPlayer() {
       {callAccepted && !callEnded && <div
         className='absolute top-0 left-0 h-full w-full'
       >
-        <video muted playsInline autoPlay ref={userVideo} className='w-full object-fill'></video>
+        <video playsInline autoPlay ref={userVideo} className='w-full object-fill'></video>
 
       </div> }
 
