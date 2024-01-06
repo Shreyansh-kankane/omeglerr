@@ -85,7 +85,7 @@ function VideoPlayer() {
         `}
       >
         {stream &&
-          <video muted playsInline autoPlay ref={myVideo} className='max-md:h-full mx-auto' ></video>
+          <video playsInline autoPlay ref={myVideo} className='max-md:h-full mx-auto' ></video>
         }
       </div>
 
@@ -93,7 +93,7 @@ function VideoPlayer() {
       {callAccepted && !callEnded && <div
         className='absolute top-0 left-0 h-full w-full'
       >
-        <video muted playsInline autoPlay ref={userVideo} className=''></video>
+        <video playsInline autoPlay ref={userVideo} className=''></video>
 
       </div> }
 

@@ -13,7 +13,6 @@ const io = socket(server,{
   }
 });
 
-
 io.on("connection",socket => {
   
   socket.emit("me",socket.id);
