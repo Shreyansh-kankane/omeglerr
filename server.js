@@ -23,7 +23,9 @@ io.on("connection",socket => {
   })
 
   socket.on("disconnect",() => {
-    socket.broadcast.emit("callEnded")
+    console.log("disconnected ",socket.id);
+    socket.broadcast.emit("callEnded");
+
   })
 
   socket.on("callUser",(data)=>{
@@ -32,6 +34,10 @@ io.on("connection",socket => {
 
   socket.on("answerCall",data => {
     io.to(data.to).emit("callAccepted",{signal:data.signal});
+  })
+
+  socket.on("callEnded",data => {
+    io.to(data.to).emit("callEnded");
   })
 
   socket.on('message', (data) => {
@@ -62,7 +68,7 @@ server.listen(5000, () => {
 
 // creating middleware
 // userIo.use((socket, next) => {
-//  if (socket.handshake.autth.token) {
+//  if (socket.handshake.auth.token) {
 //    socket.user = getUser(socket.handshake.auth.token); // access user from db
 //    return next();
 //  }
@@ -84,7 +90,7 @@ server.listen(5000, () => {
 // userIo.on('connection', (socket) => {...some code...})
 
 // authentication
-// const userIo = io.of('/user',{auth: {token: '123'}}) });
+// const userIo = io.on('/user',{auth: {token: '123'}}) });
 
 // socket.on('connect_error', (err) => {console.log(err.message);});
 

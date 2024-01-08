@@ -3,7 +3,7 @@ import { IoMdSend } from 'react-icons/io';
 import { useCallContext } from '@/context/CallContext';
 
 const ChatInput = () => {
-  const { callEnded,callAccepted, sendMessage } = useCallContext();
+  const { callAccepted, sendMessage } = useCallContext();
   const inputRef = useRef<HTMLInputElement>(null);
 
   const onSendMessage = () => {
@@ -18,7 +18,7 @@ const ChatInput = () => {
     <div className='flex items-center w-full h-fit p-2 mt-2 space-x-3 absolute bottom-0'>
 
     {
-      callAccepted && !callEnded ? (
+      callAccepted ? (
         <button 
           className='bg-slate-400 text-white p-2 rounded-md mt-2'
         >

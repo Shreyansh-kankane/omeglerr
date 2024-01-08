@@ -5,7 +5,7 @@ import { useCallContext } from '@/context/CallContext'
 import { useState } from 'react'
 
 function Sidebar() {
-  const { me, callAccepted, callEnded, leaveCall, callUser,answerCall, call } = useCallContext();
+  const { me, callAccepted, leaveCall, callUser,answerCall, call } = useCallContext();
   const [idToCall, setIdToCall] = useState('');
 
   return (
@@ -21,7 +21,7 @@ function Sidebar() {
           className='border border-gray-300 p-1 rounded-md w-auto'
           placeholder='Enter ID to call'
         />
-        {callAccepted && !callEnded ? (
+        {callAccepted ? (
           <button 
             className='bg-red-500 text-white p-2 rounded-md mt-2'
             onClick={leaveCall} 
