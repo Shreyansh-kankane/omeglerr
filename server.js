@@ -1,4 +1,3 @@
-
 const express = require('express');
 const http = require('http');
 
@@ -13,44 +12,100 @@ const io = socket(server,{
   }
 });
 
-io.on("connection",socket => {
-  
-  socket.emit("me",socket.id);
+const dummyAvailableUsers = [
+ "sdefrgtgt4hy5hy5",
+ "defwrfregt4hy5hy"
+]
 
-  socket.on("getMe",()=>{
+const dummyOnCallUsers = [
+  {
+    id1: "naldfkrwfjrfdfgo",//initiator socket id
+    id2: "fgdsfgegththyhyy",//socket id
+  }
+]
+
+
+const availableUsers = [];
+
+const oncallUsers = [];
+
+io.on("connection",socket => {
+
+  const auth = socket.handshake.auth;
+  if(auth.token === 'omeglerr'){
     socket.emit("me",socket.id);
-  
-  })
+  }else {
+    socket.disconnect();
+  }
 
   socket.on("disconnect",() => {
-    console.log("disconnected ",socket.id);
+    
+    if (availableUsers.indexOf(socket.id) > -1) {
+      availableUsers.splice(availableUsers.indexOf(socket.id),1);
+    }else if(oncallUsers.indexOf(socket.id) > -1){
+      oncallUsers.splice(oncallUsers.indexOf(socket.id),1);
+    } 
     socket.broadcast.emit("callEnded");
-
   })
 
-  socket.on("callUser",(data)=>{
-      io.to(data.userToCall).emit("callUser",{signal:data.signalData, from: data.from});
+  socket.on("wantToConnect",(id)=>{
+    if(availableUsers.length > 0){
+      const user = availableUsers.pop();
+      oncallUsers.push(user);
+      oncallUsers.push(socket.id);
+
+      io.to(user.id).emit("userFound",socket.id,true);
+      io.to(socket.id).emit("userFound",user.id,false);
+
+    }else {
+      availableUsers.push({
+        id: id
+      });
+      console.log(availableUsers);
+    }
   })
 
-  socket.on("answerCall",data => {
-    io.to(data.to).emit("callAccepted",{signal:data.signal});
+  socket.on("joinCall",({signalData,id})=>{
+    io.to(id).emit("acceptCall",signalData);
   })
+
+
 
   socket.on("callEnded",data => {
+    availableUsers.push(data.to);
+    availableUsers.push(socket.id);
+    oncallUsers.splice(oncallUsers.indexOf(data.to),1);
+    oncallUsers.splice(oncallUsers.indexOf(socket.id),1);
+
     io.to(data.to).emit("callEnded");
-  })
+  });
 
   socket.on('message', (data) => {
     console.log(data);
     socket.to(data.to).emit('message', data);
   });
-})
+});
 
 server.listen(5000, () => {
   console.log('Server is running on port 5000');
 });
 
 
+
+
+  // socket.on("callUser",(data)=>{
+  //     io.to(data.userToCall).emit("callUser",{signal:data.signalData, from: data.from});
+  // })
+
+  // socket.on("answerCall",data => {
+
+  //   availableUsers.indexOf(data.to) > -1 && availableUsers.splice(availableUsers.indexOf(data.to),1);
+  //   availableUsers.indexOf(socket.id) > -1 && availableUsers.splice(availableUsers.indexOf(socket.id),1);
+  //   oncallUsers.push(data.to);
+  //   oncallUsers.push(socket.id);
+
+  //   io.to(data.to).emit("callAccepted",{signal:data.signal});
+  // })
 
 
 
