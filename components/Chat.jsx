@@ -29,10 +29,12 @@ const ChatApp = () => {
             <Message key={index} text={message.text} sender={message.sender} />
           ))}
           <div ref={messagesEndRef} />
-
+          
         </div>
 
       </div>
+
+
 
     </div>
   );

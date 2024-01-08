@@ -1,6 +1,5 @@
 import React, { use } from 'react'
 import Sidebar from '@/components/Sidebar'
-import Brand from '@/components/Brand'
 import Vichat from '@/components/Vichat'
 import { CallContextProvider } from '@/context/CallContext'
 import Link from 'next/link'
@@ -13,11 +12,11 @@ function Chatting() {
       <div className='flex flex-row items-center h-[60px] border border-b-2 shadow-lg'>
 
         <div className='flex items-center justify-start gap-4 m-2 flex-auto pl-4 p-3'>       
-          <h1 className={`text-orange-400 font-bold ml-4 text-3xl `}>Omeglee</h1>
+          <h1 className={`text-orange-400 font-bold md:ml-4 text-3xl `}>Omeglerr</h1>
           <h3 className='hidden sm:block italic font-bold'>Talk with Strangers</h3>
         </div>
 
-        <div className='flex justify-end items-center gap-3  m-2'>
+        <div className='flex lg:w-2/3 justify-center items-center gap-4 m-2'>
           <Link href={'/'} className='hover:underline text-orange-600'>Home</Link>
           <Link href={'/about'} className='hover:underline text-orange-600'>About</Link>
           <Link href={'/text'} className='hover:underline text-orange-600'>Text-Chat</Link>

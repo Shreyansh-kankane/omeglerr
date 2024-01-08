@@ -1,8 +1,6 @@
 import React from 'react'
 import Brand from '@/components/Brand'
 import Navbar from '@/components/Navbar'
-import Button from '@/utils/Button'
-
 function Home() {
   return (
     <div className=''>
@@ -14,7 +12,7 @@ function Home() {
     
       <div className='w-3/4 m-auto p-2'>
         <h4 className='italic text-[##5f6d80] text-lg font-extralight'>
-          Omeglee is a free chat room that allows you to connect with millions of people anonymously. No login is required, just start chatting with single click.
+          Omeglerr is a free chat room that allows you to connect with millions of people anonymously. No login is required, just start chatting with single click.
         </h4>
       </div>
 

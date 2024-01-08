@@ -1,59 +1,34 @@
-'use client'
 import React from 'react'
 import {IoMdSettings} from 'react-icons/io'
-import { useCallContext } from '@/context/CallContext'
-import { useState } from 'react'
+import Image from 'next/image'
 
 function Sidebar() {
-  const { me, callAccepted, leaveCall, callUser,answerCall, call } = useCallContext();
-  const [idToCall, setIdToCall] = useState('');
-
   return (
-    <div className='hidden md:flex md:flex-col w-1/4 justify-between bg-[#FFF7EE]'>
-
-      <div className='w-full'>
-
-        Your id: <span className='font-bold'>{me}</span>
-        <p>Make Call</p>
-        <input type="text" 
-          value={idToCall}
-          onChange={(e) => setIdToCall(e.target.value)}
-          className='border border-gray-300 p-1 rounded-md w-auto'
-          placeholder='Enter ID to call'
-        />
-        {callAccepted ? (
-          <button 
-            className='bg-red-500 text-white p-2 rounded-md mt-2'
-            onClick={leaveCall} 
-          >
-            Hang Up
-          </button>
-        ) : (
-          <button 
-            className='bg-green-500 text-white p-2 rounded-md mt-2'
-            onClick={() => callUser(idToCall)}>
-            Call
-          </button>
-        )}
-
-        {call.isReceivingCall && !callAccepted && (
-          <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-            <h1>Someone is calling:</h1>
-            <button onClick={answerCall}>
-              Answer
-            </button>
+    <div className='hidden md:flex items-center justify-center  w-1/4 bg-[#FFF7EE] overflow-hidden'>
+      {/* card */}
+      <div className='w-full h-2/3 m-3 p-4 rounded-md border shadow-xl bg-white '>
+        <div className='flex flex-col items-center bg-gray-100 border-none p-2'>
+          <Image src={'/chat.jpg'} width={200} height={200} alt='' className='rounded-xl'/>
         </div>
-      )}
-
+        <div className='text-center p-2 mt-5'>
+          <h1 className='text-orange-600 font-bold text-xl'>Start Chat free </h1>
+          <p className='text-gray-500 '>Talk with strangers anonymously and make your new friends !</p>
+          <p className='text-gray-500 '>On one click</p>
+        </div>
       </div>
 
-      <div className='flex space-x-4 p-4 items-center'>
-        <IoMdSettings className='text-2xl' />
-        <p>Settings</p>
-      </div>
 
-  </div>
+    </div>
   )
 }
 
 export default Sidebar
+
+
+{/* <div className='flex flex-col h-full items-center justify-center gap-4 transform -rotate-45'>   
+    <div className='leading-relaxed '>
+      <h1 className={`text-orange-400 font-bold md:ml-4 text-5xl leading-tight text-center`}>Omeglerr</h1>
+      <h1 className='hidden sm:block italic font-bold text-xl text-center'>Talk with Strangers</h1>
+    </div>
+    <p className='text-gray-400 '>Click Spacebar for next-room</p>
+  </div> */}

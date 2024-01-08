@@ -168,12 +168,14 @@ const CallContextProvider = ({ children }) => {
     const [call, setCall] = useState({});
     const [stream, setStream] = useState();
     const [callAccepted, setCallAccepted] = useState(false);
+    const [messages, setMessages] = useState([]);
+    const [loading, setLoading] = useState(false);
     
     const myVideo = useRef();
     const userVideo = useRef();
     const connectionRef = useRef();
 
-    useEffect(() => {
+    const startWebCam = () => {
         navigator.mediaDevices.getUserMedia({ video: true, audio: true })
         .then((currentStream) => {
             setStream(currentStream);
@@ -181,7 +183,20 @@ const CallContextProvider = ({ children }) => {
                 myVideo.current.srcObject = currentStream;
             }
         });
-    }, []);
+    }
+
+    const stopWebCam = () => {
+        if(stream){
+            stream.getTracks().forEach(function(track) {
+                track.stop();
+            });
+            myVideo.current.srcObject = null;
+        }
+    }
+
+    useEffect(() => {
+        startWebCam();
+    },[])
 
     useEffect(() => {
         setMe(socket.id);
@@ -195,11 +210,18 @@ const CallContextProvider = ({ children }) => {
             if(connectionRef.current){
                 connectionRef.current.destroy();
             }
-        })
+        });
     },[])
 
+    useEffect(() => {
+        socket.on('message', ({ text, from }) => 
+            setMessages([...messages, { text, sender: from === me ? 'me' : 'user' }])
+        );
+    },[messages])
+
+
     const wantToConnect = () => {
-        console.log('want to connect');
+        setLoading(true);
         socket.emit('wantToConnect',{
             id: socket.id,
         })
@@ -227,8 +249,9 @@ const CallContextProvider = ({ children }) => {
         socket.on('acceptCall',(signal)=>{
             console.log('accepting call ',signal);
             peer.signal(signal);
-            setCallAccepted(true);
             setCall({isReceivingCall: initiator, id: id});
+            setCallAccepted(true);
+            setLoading(false);
         })
         connectionRef.current = peer;
     }
@@ -243,6 +266,15 @@ const CallContextProvider = ({ children }) => {
         socket.off('acceptCall');
     };
 
+    const sendMessage = (message) => {
+        if (call.isReceivingCall) {
+            socket.emit('message', { text: message, from: me, to: call.id });
+        } else {
+            socket.emit('message', { text: message, from: me, to: call.id });
+        }
+        setMessages((m)=> [...m, { text: message, sender: 'me' }]);
+    };
+
     return (
         <SocketContext.Provider value={{
             me,
@@ -251,8 +283,13 @@ const CallContextProvider = ({ children }) => {
             userVideo,
             myVideo,
             stream,
+            messages,
+            loading,
             leaveCall,
-            wantToConnect
+            wantToConnect,
+            sendMessage,
+            startWebCam,
+            stopWebCam
         }}
         >
             {children}
