@@ -7,7 +7,6 @@ function Navbar() {
       <Link href={'/'}>Home</Link>
       <Link href={'/text'}>Chat Online</Link>
       <Link href={'/chatting'}>Vedio Chat</Link>
-      <Link href={'/about'}>About Us</Link>
     </div>
   )
 }

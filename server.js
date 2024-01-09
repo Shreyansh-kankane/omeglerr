@@ -153,3 +153,4 @@ server.listen(5000, () => {
 // socket.disconnect(); 
 
 // socket.volatite.emit => client send the not all the message to server if gets disconnected in between
+

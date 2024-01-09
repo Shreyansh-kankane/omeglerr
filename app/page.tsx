@@ -1,7 +1,14 @@
+"use client"
 import React from 'react'
 import Brand from '@/components/Brand'
 import Navbar from '@/components/Navbar'
+
+import { useModal } from '@/hooks/use-modal-store'
+
 function Home() {
+
+  const { onOpen } = useModal();
+
   return (
     <div className=''>
       <Brand className='text-5xl text-center'/>
@@ -16,20 +23,16 @@ function Home() {
         </h4>
       </div>
 
-      <div className='flex flex-row justify-center text-gray-400 m-3'>
-        <input type="checkbox" 
-          className=''
-
-        />
-        <p>By checking you declare that you are above 18 years</p>
-      </div>
-
       <div className='flex justify-center gap-5'>
-        <button className='bg-[#3c99fc] text-white rounded-md p-3 font-bold'>
+        <button className='bg-[#3c99fc] text-white rounded-md p-3 font-bold'
+          onClick={()=>onOpen('terms',"text")}
+        >
           Chat Online
         </button>
-        <button className='bg-[#3c99fc] text-white rounded-md p-3 font-bold'>
-          Vedio Chat Online
+        <button className='bg-[#3c99fc] text-white rounded-md p-3 font-bold'
+          onClick={()=>onOpen('terms',"video")}
+        >
+          Vedio Chat Online 
         </button>
       </div>
      </div>

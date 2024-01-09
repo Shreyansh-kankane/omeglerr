@@ -1,9 +1,15 @@
 import React, { useRef } from 'react';
 import { IoMdSend } from 'react-icons/io';
 import { useCallContext } from '@/context/CallContext';
+import { useTextChatContext } from '@/context/TextChatContext';
 
-const ChatInput = () => {
-  const { callAccepted, sendMessage,leaveCall,wantToConnect,loading } = useCallContext();
+const ChatInput = ({type}:{type:string}) => {
+  if(type === 'vichat'){
+    var { callAccepted, sendMessage,leaveCall,wantToConnect,loading } = useCallContext();
+  }
+  else if(type == 'textchat') {
+    var { callAccepted, sendMessage,leaveCall,wantToConnect,loading } = useTextChatContext();
+  }
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -16,24 +22,28 @@ const ChatInput = () => {
   };
 
   return (
-    <div className='flex items-center w-full h-fit p-2 mt-2 space-x-3 absolute bottom-0'>
+    <div className='flex items-center w-full h-fit p-2 mt-2 space-x-3 absolute bottom-1'>
 
-    {
-      (loading || callAccepted) ? (
-        <button 
+    { callAccepted && <button 
           className='bg-slate-400 text-white p-2 rounded-md mt-2'
           onClick={leaveCall}
         >
           Stop
-        </button>
-      ) : (
-        <button 
-          className='bg-sky-500 text-white p-2 rounded-md mt-2'
-          onClick={wantToConnect}
-        >
-          New
-        </button>
-      )
+        </button> 
+    }
+
+    {loading && <button className='bg-slate-100 text-black p-2 rounded-md mt-2 '>
+        Connecting...
+      </button>
+    }
+
+    { !callAccepted && !loading && <button 
+        className='bg-sky-500 text-white p-2 w-1/4 rounded-md mt-2'
+        onClick={wantToConnect}
+      >
+        New
+    </button>
+
     }
 
       <input
@@ -46,9 +56,9 @@ const ChatInput = () => {
             onSendMessage();
           }
         }}
-        disabled={loading || !callAccepted}
+        
       />
-      <IoMdSend className='text-2xl text-[#5f6d80] cursor-pointer' onClick={onSendMessage} />
+      <IoMdSend className='text-2xl text-[#5f6d80] cursor-pointer min-w-8' onClick={onSendMessage} />
     </div>
   );
 };

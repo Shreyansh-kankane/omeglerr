@@ -226,13 +226,11 @@ const CallContextProvider = ({ children }) => {
             id: socket.id,
         })
         socket.on('userFound',(id,initiator)=>{
-            console.log('userFound ',id);
             makeCall(id,initiator)
         })
     }
 
     const makeCall = (id,initiator) => {
-        console.log('making call ');
         if (connectionRef.current) {
             connectionRef.current.destroy();
         }
@@ -251,6 +249,7 @@ const CallContextProvider = ({ children }) => {
             peer.signal(signal);
             setCall({isReceivingCall: initiator, id: id});
             setCallAccepted(true);
+            setMessages([{text:'You connected to the person✨. You can start your conversation',sender:'user'}]);
             setLoading(false);
         })
         connectionRef.current = peer;
