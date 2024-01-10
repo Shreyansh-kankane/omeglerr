@@ -1,13 +1,12 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import './globals.css'
-import { ModalProvider } from '@/context/ModalProvider'
+import '../globals.css'
+import Brand from '@/components/Brand'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://omeglerr.netlify.app/"),
-  title: 'Omeglerr - Connecting lives, Connecting minds beyond borders',
+  title: 'Omeglerr - terms and conditions',
   description: 'Omeglerr is a platform that connects people from different parts of the world to chat with each other.',
 }
 
@@ -18,11 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </head>
       <body className={inter.className}>
-        <ModalProvider />
+       <Brand />
         {children}
       </body>
     </html>

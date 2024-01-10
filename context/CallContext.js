@@ -207,11 +207,42 @@ const CallContextProvider = ({ children }) => {
         socket.on('callEnded',()=>{
             setCallAccepted(false);
             setCall({});
+            setMessages((prev)=> [...prev,{text:'User left the chat ,Lets find others, click new to continue !',sender:'user'}]);
             if(connectionRef.current){
                 connectionRef.current.destroy();
             }
         });
     },[])
+
+    useEffect(() => {
+        const handleBeforeUnload = () => {
+            if(call.id !== '' && call.id !== null && call.id !== undefined){
+                socket.emit('callEnded', user);
+            }
+        };
+        const handleKeyDown = (event) => {
+            if(event.keyCode === 32){
+                if(callAccepted && !loading){
+                    leaveCall();
+                    wantToConnect();
+                }
+                else if(!callAccepted && !loading){
+                    wantToConnect();
+                }
+            }
+        }
+
+        if(typeof window !== 'undefined'){
+            window.addEventListener('beforeunload', handleBeforeUnload);
+            window.addEventListener('keydown', handleKeyDown);
+        }
+        return () => {
+            if(typeof window !== 'undefined'){
+                window.removeEventListener('beforeunload', handleBeforeUnload);
+                window.addEventListener('keydown', handleKeyDown);
+            }
+        }
+    }, [call]);
 
     useEffect(() => {
         socket.on('message', ({ text, from }) => 

@@ -2,8 +2,15 @@ import React, { useRef } from 'react';
 import { IoMdSend } from 'react-icons/io';
 import { useCallContext } from '@/context/CallContext';
 import { useTextChatContext } from '@/context/TextChatContext';
+import { useState } from 'react';
 
 const ChatInput = ({type}:{type:string}) => {
+  const [escape, setEscape] = useState(false);
+  const handleLeaveCall = () => {
+    leaveCall();
+    setEscape(false);
+  }
+
   if(type === 'vichat'){
     var { callAccepted, sendMessage,leaveCall,wantToConnect,loading } = useCallContext();
   }
@@ -24,13 +31,22 @@ const ChatInput = ({type}:{type:string}) => {
   return (
     <div className='flex items-center w-full h-fit p-2 mt-2 space-x-3 absolute bottom-1'>
 
-    { callAccepted && <button 
+    { callAccepted && !escape && <button 
           className='bg-slate-400 text-white p-2 rounded-md mt-2'
-          onClick={leaveCall}
+          onClick={e=> setEscape(prev=>!prev)}
         >
           Stop
         </button> 
     }
+  
+      {callAccepted && escape && <button 
+            className='bg-slate-200 text-black p-2 rounded-md mt-2'
+            onClick={handleLeaveCall}
+          >
+            Esc?
+          </button> 
+      }
+
 
     {loading && <button className='bg-slate-100 text-black p-2 rounded-md mt-2 '>
         Connecting...

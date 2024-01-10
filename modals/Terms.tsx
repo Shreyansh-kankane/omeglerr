@@ -26,7 +26,7 @@ export default function TermsModal() {
   const handleAgree = () => {
     
     if(firstchecked && secondChecked){
-      if(data == 'video')
+      if(data == 'vichat')
         router.push(`/${data}`);
       else if(data == 'text') {
         router.push(`/text`);
@@ -42,14 +42,14 @@ export default function TermsModal() {
         {/* Add your terms and conditions content here */}
         <div className=''>
              <p className=''><input type="checkbox" style={{width: "15px", height: "15px"}}  onChange={(event: React.ChangeEvent<HTMLInputElement>) => setFirstChecked(event.target.checked)} /> By checking the box you acknowledge that you have 
-            reviewed and agree to the Omeglerr <Link href="" style={{textDecoration:'underline',color:'blue'}}>Terms of Service</Link>, <Link href="/termsAndConditions" style={{textDecoration:'underline',color:'blue'}}>Privacy Policy</Link> and <Link href="/termsAndConditions" style={{textDecoration:'underline',color:'blue'}}>Community Guidelines</Link>.
+            reviewed and agree to the Omeglerr <Link href="/terms" style={{textDecoration:'underline',color:'blue'}}>Terms of Service</Link>, <Link href="/privacy" style={{textDecoration:'underline',color:'blue'}}>Privacy Policy</Link>
            </p>
         </div>
 
         <div className='mt-2'>
            <p><input type="checkbox"style={{width: "15px", height: "15px"}} onChange={(event: React.ChangeEvent<HTMLInputElement>) => setSecondChecked(event.target.checked)}/> You must be 18+ or 13+ to use Omeglerr If you are between 13 and 18 years of age, you may only
             use Omeglerr with the permission and your legal guardian
-            . Persions under the age of 13 <span className='font-bold'>may not</span> use Omegler. See our <Link className='text-blue-800 underline' href="/termsAndConditions" style={{textDecoration:'underline',color:'blue'}}>Terms of Service</Link> for more info. 
+            . Persions under the age of 13 <span className='font-bold'>may not</span> use Omegler. See our <Link className='text-blue-800 underline' href="/terms" style={{textDecoration:'underline',color:'blue'}}>Terms of Service</Link> for more info. 
             <span className='font-bold'>By checking the box you acknowledge and represent thatyou comply with these age restrictions</span> <a href="">Privacy Policy</a> and <a href="">Community Guidelines</a>.
            </p>
         </div>

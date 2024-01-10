@@ -3,22 +3,26 @@ import Sidebar from '@/components/Sidebar'
 import Vichat from '@/components/Vichat'
 import { CallContextProvider } from '@/context/CallContext'
 import Header from '@/components/Header'
-import Link from 'next/link'
+
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'ViChat - Omeglerr',
+  description: 'Video chatting with strangers on Omeglerr',
+}
+
 
 function Chatting() {
 
   return (
     <div className='flex flex-col'>
-
-      <Header />
-
-      <div className='h-[calc(100vh-60px)] w-full flex flex-col md:flex-row flex-wrap'>
         <CallContextProvider>
-          <Sidebar width={'w-1/4'} />
-          <Vichat />
+        <Header />
+        <div className='h-[calc(100vh-60px)] w-full flex flex-col md:flex-row flex-wrap'>
+            <Sidebar width={'w-1/4'} />
+            <Vichat />
+        </div>
         </CallContextProvider>
-      </div>
-
     </div>
   )
 }

@@ -22,8 +22,39 @@ const TextChatContextProvider = ({ children }) => {
         socket.on('callEnded',()=>{
             setCallAccepted(false);
             setUser('');
+            setMessages((prev)=> [...prev,{text:'User left the chat ,Lets find others, click new to continue !',sender:'user'}]);
         });
     },[])
+
+    useEffect(() => {
+        const handleBeforeUnload = () => {
+            if(user !== '' || user !== null || user !== undefined){
+                socket.emit('callEnded', user);
+            }
+        };
+        const handleKeyDown = (event) => {
+            if(event.keyCode === 32){
+                if(callAccepted && !loading){
+                    leaveCall();
+                    wantToConnect();
+                }
+                else if(!callAccepted && !loading){
+                    wantToConnect();
+                }
+            }
+        }
+
+        if(typeof window !== 'undefined'){
+            window.addEventListener('beforeunload', handleBeforeUnload);
+            window.addEventListener('keydown', handleKeyDown);
+        }
+        return () => {
+            if(typeof window !== 'undefined'){
+                window.removeEventListener('beforeunload', handleBeforeUnload);
+                window.removeEventListener('keydown', handleKeyDown);
+            }
+        }
+    }, [user]);
 
     useEffect(() => {
         socket.on('message', ({ text, from }) => 
@@ -58,6 +89,7 @@ const TextChatContextProvider = ({ children }) => {
         socket.emit('callEnded',user);
         setUser('');
         socket.off('acceptCall');
+        setMessages([]);
     };
 
     const sendMessage = (message) => {

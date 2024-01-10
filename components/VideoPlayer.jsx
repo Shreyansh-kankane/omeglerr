@@ -11,7 +11,7 @@ function VideoPlayer() {
   const {callAccepted, myVideo,userVideo,loading, startWebCam,stopWebCam } = useCallContext();
   // const [mic, setMic] = useState(true);
   const [myVideoEnable, setMyVideoEnable] = useState(true);
-  const [userVideoEnable, setUserVideoEnable] = useState(true);
+  // const [userVideoEnable, setUserVideoEnable] = useState(true);
 
   const handleWebCam = () => {
     if (myVideoEnable) {
