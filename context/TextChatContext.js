@@ -28,30 +28,30 @@ const TextChatContextProvider = ({ children }) => {
 
     useEffect(() => {
         const handleBeforeUnload = () => {
-            if(user !== '' || user !== null || user !== undefined){
+            if(user !== '' && user !== null && user !== undefined){
                 socket.emit('callEnded', user);
             }
         };
-        const handleKeyDown = (event) => {
-            if(event.keyCode === 32){
-                if(callAccepted && !loading){
-                    leaveCall();
-                    wantToConnect();
-                }
-                else if(!callAccepted && !loading){
-                    wantToConnect();
-                }
-            }
-        }
+        // const handleKeyDown = (event) => {
+        //     if(event.keyCode === 32){
+        //         if(callAccepted && !loading){
+        //             leaveCall();
+        //             wantToConnect();
+        //         }
+        //         else if(!callAccepted && !loading){
+        //             wantToConnect();
+        //         }
+        //     }
+        // }
 
         if(typeof window !== 'undefined'){
             window.addEventListener('beforeunload', handleBeforeUnload);
-            window.addEventListener('keydown', handleKeyDown);
+            // window.addEventListener('keydown', handleKeyDown);
         }
         return () => {
             if(typeof window !== 'undefined'){
                 window.removeEventListener('beforeunload', handleBeforeUnload);
-                window.removeEventListener('keydown', handleKeyDown);
+                // window.removeEventListener('keydown', handleKeyDown);
             }
         }
     }, [user]);
@@ -86,7 +86,7 @@ const TextChatContextProvider = ({ children }) => {
 
     const leaveCall = () => {
         setCallAccepted(false);
-        socket.emit('callEnded',user);
+        if(user !== '' && user !== null && user !== undefined) socket.emit('callEnded',user);
         setUser('');
         socket.off('acceptCall');
         setMessages([]);

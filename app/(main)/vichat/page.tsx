@@ -2,7 +2,7 @@ import React, { use } from 'react'
 import Sidebar from '@/components/Sidebar'
 import Vichat from '@/components/Vichat'
 import { CallContextProvider } from '@/context/CallContext'
-import Header from '@/components/Header'
+import Header from '@/components/HeaderViChat'
 
 import type { Metadata } from 'next'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '@/components/Header'
+import Header from '@/components/HeaderText'
 import TextChat from '@/components/TextChat'
 import {TextChatContextProvider} from '@/context/TextChatContext'
 

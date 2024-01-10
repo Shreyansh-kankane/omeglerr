@@ -16,7 +16,7 @@ function Sidebar({width}:{width:string}) {
           <p className='text-gray-500 '>On one click</p>
         </div>
         <div className='text-center bg-slate-50 mt-5 italic'>
-          <p>Start with click New or spacebar</p>
+          <p>Start with click New</p>
         </div>
       </div>
     </div>
@@ -25,11 +25,3 @@ function Sidebar({width}:{width:string}) {
 
 export default Sidebar
 
-
-{/* <div className='flex flex-col h-full items-center justify-center gap-4 transform -rotate-45'>   
-    <div className='leading-relaxed '>
-      <h1 className={`text-orange-400 font-bold md:ml-4 text-5xl leading-tight text-center`}>Omeglerr</h1>
-      <h1 className='hidden sm:block italic font-bold text-xl text-center'>Talk with Strangers</h1>
-    </div>
-    <p className='text-gray-400 '>Click Spacebar for next-room</p>
-  </div> */}
