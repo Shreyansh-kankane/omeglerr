@@ -38,7 +38,7 @@ function Home() {
       </div>
 
       <div className='flex flex-col lg:flex-row w-full lg:h-1/2 p-4 md:px-16 gap-5'>
-        {/* div for Image Coraousel */}
+        
         <div className='w-full lg:w-1/2 h-full lg:h-1/2'>
           <Carousel
             className='w-full h-full'
@@ -68,9 +68,8 @@ function Home() {
               </div>
               <div className='text-center p-2 mt-5'>
                 <h1 className='text-orange-600 font-bold text-xl'>Make new Friends ! </h1>
-                <p className='text-gray-500 '>Talk with strangers  <span className='font-bold'>anonymously</span> and make your new friends !
-                  <br /> Where video calling meets genuine connections. Here, privacy isn't just a policy, It's a <span className='font-bold'>Promise</span>
-                  Our platform offers the magic of random connections, wrapped in the security of absolute privacy.
+                <p className='text-gray-500 '>Talk with strangers  <span className='font-bold'>anonymously</span> and Make your new friends !
+                  <br /> Where video calling meets genuine connections. Here, privacy isn't just a policy, It's a <span className='font-bold'>Promise. </span>Our platform offers the magic of random connections, wrapped in the security of absolute privacy.
                 </p>
               </div>
           </div>
@@ -80,11 +79,10 @@ function Home() {
       <div className='flex flex-col items-center mt-4 gap-1'>
         <Link href={'/terms'} style={{textDecoration:"underline", color:"blue" }}>Terms of Use </Link>
         <Link href={'/privacy'} style={{textDecoration:"underline", color:"blue" }}>Privacy Policy</Link>
-        {/* copyright */}
-        <p className='text-sm text-gray-400'>© 2021 Omeglerr.com. All rights reserved.</p>
+        <p className='text-sm text-gray-400'>© 2024 Omeglerr.com. All rights reserved.</p>
       </div>
      </div>
   )
 }
 
-export default Home
+export default Home;

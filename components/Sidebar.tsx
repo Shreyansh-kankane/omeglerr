@@ -11,12 +11,11 @@ function Sidebar({width}:{width:string}) {
           <Image src={'/chat.jpg'} width={200} height={200} alt='' className='rounded-xl'/>
         </div>
         <div className='text-center p-2 mt-5'>
-          <h1 className='text-orange-600 font-bold text-xl'>Start Chat free </h1>
-          <p className='text-gray-500 '>Talk with strangers anonymously and make your new friends !</p>
-          <p className='text-gray-500 '>On one click</p>
+          <h1 className='text-orange-600 font-bold text-xl'>Start free Chat</h1>
+          <p className='text-gray-500 '>Talk with strangers anonymously and make your new friends with one click !</p>
         </div>
         <div className='text-center bg-slate-50 mt-5 italic'>
-          <p>Start with click New</p>
+          <p>Click on New to Start</p>
         </div>
       </div>
     </div>

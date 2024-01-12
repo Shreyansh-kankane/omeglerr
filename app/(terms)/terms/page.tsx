@@ -123,19 +123,16 @@ Omeglerr reserves the right to modify or discontinue services with or without no
             <div className='mt-4'>
                 <h2 className='text-lg font-bold'>Contact Information</h2>
                 <p className='mt-3'>
-                For support, reporting issues, or questions regarding these terms, contact Email: <span className='font-bold'>shreyanshguptaphy@gmail.com</span>
+                For support, reporting issues, or questions regarding these terms, Contact Email: <span className='font-bold'></span>
                 </p>
             </div>
 
             <p className='bg-sky-300/40 mb-8'>
                 By using Omeglerr, you acknowledge that you have read, understood, and agree to these terms and conditions. These terms are subject to change, and any modifications will be effective upon posting. It is your responsibility to review and stay informed of any updates.
             </p>
-            
-
         </div>
-
-  )
+    )
 }
 
-export default page
+export default page;
 
