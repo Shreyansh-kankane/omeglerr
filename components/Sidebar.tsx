@@ -8,7 +8,7 @@ function Sidebar({width}:{width:string}) {
       {/* card */}
       <div className='w-full h-2/3 m-3 p-4 rounded-md border shadow-xl bg-white '>
         <div className='flex flex-col items-center bg-gray-100 border-none p-2'>
-          <Image src={'/chat.jpg'} width={200} height={200} alt='' className='rounded-xl'/>
+          <Image src={'/chat.jpg'} width={200} height={200} alt='Chatting' className='rounded-xl'/>
         </div>
         <div className='text-center p-2 mt-5'>
           <h1 className='text-orange-600 font-bold text-xl'>Start free Chat</h1>

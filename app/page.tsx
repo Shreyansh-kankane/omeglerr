@@ -55,8 +55,8 @@ function Home() {
               }
             }}
           >
-            <img src='/vichat.png' alt='' className='w-full h-full object-cover'/>
-            <img src='/conversation.png' alt='' className='w-full h-full object-cover'/>
+            <img src='/vichat.png' alt='Video_calling' className='w-full h-full object-cover'/>
+            <img src='/conversation.png' alt='Chatting_room' className='w-full h-full object-cover'/>
           </Carousel>
         </div>
           
@@ -64,7 +64,7 @@ function Home() {
         <div className='w-full h-full lg:w-1/2 lg:h-1/2'>
             <div className='mx-auto w-full h-full rounded-lg border shadow-2xl bg-white '>
               <div className='flex flex-col items-center bg-gray-100 border-none p-2'>
-                <Image src={'/chat.jpg'} width={200} height={200} alt='' className='rounded-xl'/>
+                <Image src={'/chat.jpg'} width={200} height={200} alt='Make_friends' className='rounded-xl'/>
               </div>
               <div className='text-center p-2 mt-5'>
                 <h1 className='text-orange-600 font-bold text-xl'>Make new Friends ! </h1>
