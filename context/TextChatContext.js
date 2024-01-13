@@ -1,7 +1,9 @@
 'use client'
 import React, { createContext, useState, useEffect, useContext } from 'react';
+import io from 'socket.io-client';
 
-import socket from '../lib/CreateTextChatSocket';
+const url = process.env.NEXT_PUBLIC_SERVER_URL + '/textUser'
+const mysocket = io(url,{auth: { token: 'omeglerr' }});
 
 const TextSocketContext = createContext();
 
@@ -12,8 +14,12 @@ const TextChatContextProvider = ({ children }) => {
     const [callAccepted, setCallAccepted] = useState(false);
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [socket, setSocket] = useState(mysocket);
 
     useEffect(() => {
+
+        setSocket(mysocket);
+
         return () => {
             if (socket.readyState === 1) { // <-- This is important
                 socket.close();
