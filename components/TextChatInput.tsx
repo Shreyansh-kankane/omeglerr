@@ -1,16 +1,16 @@
 import React, { useRef } from 'react';
 import { IoMdSend } from 'react-icons/io';
-import { useCallContext } from '@/context/CallContext';
+import { useTextChatContext } from '@/context/TextChatContext';
 import { useState } from 'react';
 
-const ChatInput = () => {
+const TextChatInput = () => {
   const [escape, setEscape] = useState(false);
+  const { callAccepted, sendMessage,leaveCall,wantToConnect,loading } = useTextChatContext();
+
   const handleLeaveCall = () => {
     leaveCall();
     setEscape(false);
   }
-
-  const { callAccepted, sendMessage,leaveCall,wantToConnect,loading } = useCallContext();
 
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -69,9 +69,10 @@ const ChatInput = () => {
         
       />
       <IoMdSend className='text-2xl text-[#5f6d80] cursor-pointer min-w-8' onClick={onSendMessage} />
+      
     </div>
   );
 };
 
-export default ChatInput;
+export default TextChatInput;
 

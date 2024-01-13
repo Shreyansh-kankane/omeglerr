@@ -1,7 +1,7 @@
 'use client'
 import React, { useRef, useEffect } from 'react';
 import Message from './Message';
-import ChatInput from './ChatInput';
+import TextChatInput from './TextChatInput';
 import { useTextChatContext } from '@/context/TextChatContext';
 
 interface TextMessage {
@@ -25,7 +25,7 @@ const TextChatBox = () => {
   return (
     <div className="h-full w-full border-l shadow-md flex flex-col-reverse relative">
 
-        <ChatInput type={'textchat'}/>
+        <TextChatInput />
 
         <div className='min-w-fit mb-14 overflow-auto'>
 

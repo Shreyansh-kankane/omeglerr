@@ -20,7 +20,7 @@ const ChatApp = () => {
   return (
     <div className="h-1/2 w-full sm:w-1/3 sm:h-full border-l shadow-md flex flex-col-reverse relative">
 
-      <ChatInput type={'vichat'} />
+      <ChatInput/>
 
       <div className='min-w-fit mb-14 overflow-auto'>
 

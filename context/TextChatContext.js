@@ -15,11 +15,13 @@ const TextChatContextProvider = ({ children }) => {
 
     useEffect(() => {
         setMe(socket.id);
+        console.log(socket.id);
     },[])
 
     useEffect(() => {  
         socket.on('me', (id) => setMe(id));
         socket.on('callEnded',()=>{
+            console.log('call ended');
             setCallAccepted(false);
             setUser('');
             setMessages((prev)=> [...prev,{text:'User left the chat ,Lets find others, click new to continue !',sender:'user'}]);
@@ -29,6 +31,7 @@ const TextChatContextProvider = ({ children }) => {
     useEffect(() => {
         const handleBeforeUnload = () => {
             if(user !== '' && user !== null && user !== undefined){
+                console.log('call ended before unload');
                 socket.emit('callEnded', user);
             }
         };
@@ -66,17 +69,22 @@ const TextChatContextProvider = ({ children }) => {
     const wantToConnect = () => {
         setLoading(true);
         setMessages([]);
+        console.log('want to connect id: ',socket.id);
         socket.emit('wantToConnect',{
             id: socket.id,
         })
         socket.on('userFound',(id)=>{
+            console.log('user found id: ',id);
             makeCall(id)
         })
     }
 
     const makeCall = (id) => {
+        console.log('make call id: ',id);
         socket.emit('joinCall',{id: id})
+
         socket.on('acceptCall',()=>{
+            console.log('accept call id: ',id);
             setUser(id)
             setCallAccepted(true);
             setMessages([{text:'You connected to the person✨. You can start your conversation',sender:'user'}]);
@@ -85,6 +93,7 @@ const TextChatContextProvider = ({ children }) => {
     }
 
     const leaveCall = () => {
+        console.log("leaveCall")
         setCallAccepted(false);
         if(user !== '' && user !== null && user !== undefined) socket.emit('callEnded',user);
         setUser('');
