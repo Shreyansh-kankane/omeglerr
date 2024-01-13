@@ -20,6 +20,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        { process.env.NODE_ENV === 'production' && <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7951236970634483" crossOrigin="anonymous"></script>}
+     
       </head>
       <body className={inter.className}>
         <ModalProvider />
