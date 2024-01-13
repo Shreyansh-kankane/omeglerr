@@ -14,6 +14,14 @@ const TextChatContextProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
+        return () => {
+            if (socket.readyState === 1) { // <-- This is important
+                socket.close();
+            }
+        }
+    }, []);
+
+    useEffect(() => {
         setMe(socket.id);
         console.log(socket.id);
     },[])
