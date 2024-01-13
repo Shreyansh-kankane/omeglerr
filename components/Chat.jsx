@@ -42,7 +42,7 @@ const ChatApp = () => {
             <p className='text-slate-400 text-lg'>Connecting... Please Wait !</p>
         }
          { callAccepted &&
-          <p className='text-slate-400 text-lg'><div className='inline-block rounded-full w-3 h-3 bg-green-600'/> Status: Connected </p> 
+          <div className='text-slate-400 text-lg'><div className='inline-block rounded-full w-3 h-3 bg-green-600'/> Status: Connected </div> 
         }
       </div>
     </div>
