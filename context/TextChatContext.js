@@ -19,8 +19,18 @@ const TextChatContextProvider = ({ children }) => {
         console.log(socket.id);
     },[])
 
+    //try-3
+    useEffect(() => {
+        const socket = new WebSocket("https://omegler-socket-server.onrender.com/textUser");
+        return () => {
+            if (socket.readyState === 1) { // <-- This is important
+                socket.close();
+            }
+        }   
+    }, []);
+
     useEffect(() => {  
-        // socket.on('me', (id) => setMe(id));
+        socket.on('me', (id) => setMe(id));
         socket.on('callEnded',()=>{
             console.log('call ended');
             setCallAccepted(false);
