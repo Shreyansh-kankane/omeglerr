@@ -13,19 +13,21 @@ const TextChatContextProvider = ({ children }) => {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    // useEffect(() => {
-    //     setMe(socket.id);
-    //     console.log(socket.id);
-    // },[])
+    // try-1
+    useEffect(() => {
+        setMe(socket.id);
+        console.log(socket.id);
+    },[])
 
     useEffect(() => {  
-        socket.on('me', (id) => setMe(id));
+        // socket.on('me', (id) => setMe(id));
         socket.on('callEnded',()=>{
             console.log('call ended');
             setCallAccepted(false);
             setUser('');
             setMessages((prev)=> [...prev,{text:'User left the chat ,Lets find others, click new to continue !',sender:'user'}]);
         });
+        console.log('me id: ',me);
     },[])
 
     useEffect(() => {
