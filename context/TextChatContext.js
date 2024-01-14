@@ -13,10 +13,10 @@ const TextChatContextProvider = ({ children }) => {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        setMe(socket.id);
-        console.log(socket.id);
-    },[])
+    // useEffect(() => {
+    //     setMe(socket.id);
+    //     console.log(socket.id);
+    // },[])
 
     useEffect(() => {  
         socket.on('me', (id) => setMe(id));
