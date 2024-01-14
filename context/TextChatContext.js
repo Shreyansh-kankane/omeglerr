@@ -21,7 +21,7 @@ const TextChatContextProvider = ({ children }) => {
 
     //try-3
     useEffect(() => {
-        const socket = new WebSocket("wss://omegler-socket-server.onrender.com/textUser");
+        const socket = new WebSocket("wss://omegler-socket-server.onrender.com");
         return () => {
             if (socket.readyState === 1) { // <-- This is important
                 socket.close();
