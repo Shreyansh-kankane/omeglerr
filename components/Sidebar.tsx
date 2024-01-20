@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 function Sidebar({width}:{width:string}) {
   return (
-    <div className={`hidden md:flex ${width} bg-[#e8ded2] overflow-hidden`}>
+    <div className={`hidden md:flex flex-col ${width} bg-[#e8ded2] overflow-hidden`}>
       {/* card */}
 
       <AdsenseComp />
