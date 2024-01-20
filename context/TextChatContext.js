@@ -13,28 +13,16 @@ const TextChatContextProvider = ({ children }) => {
     const [messages, setMessages] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    // try-1
     useEffect(() => {
         setMe(socket.id);
-        console.log(socket.id);
     },[])
-
-    //try-3
-    // useEffect(() => {
-    //     const socket = new WebSocket("wss://omegler-socket-server.onrender.com/textUser");
-    //     return () => {
-    //         if (socket.readyState === 1) { // <-- This is important
-    //             socket.close();
-    //         }
-    //     }   
-    // }, []);
 
     useEffect(() => {  
         socket.on('me', (id) => setMe(id));
         socket.on('callEnded',()=>{
             setCallAccepted(false);
             setUser('');
-            setMessages((prev)=> [...prev,{text:'User left the chat ,Lets find others, click new to continue !',sender:'user'}]);
+            setMessages((prev)=> [...prev,{text:'Sorry User has left the chat, Lets find other mate 😄, click new to continue!',sender:'user'}]);
         });
     },[])
 

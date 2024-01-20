@@ -50,7 +50,7 @@ const CallContextProvider = ({ children }) => {
         socket.on('callEnded',()=>{
             setCallAccepted(false);
             setCall({});
-            setMessages((prev)=> [...prev,{text:'User left the chat ,Lets find others, click new to continue !',sender:'user'}]);
+            setMessages((prev)=> [...prev,{text:'Sorry User has left the chat, Lets find other mate 😃, click new to continue!',sender:'user'}]);
             if(connectionRef.current){
                 connectionRef.current.destroy();
             }
