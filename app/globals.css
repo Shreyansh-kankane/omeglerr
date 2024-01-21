@@ -44,8 +44,14 @@
     }
 }
 
+@media screen and (max-width: 490px) {
+    .content {
+        height: 30vh;
+    }
+}
+
 @media screen and (max-width: 445px) {
     .content {
-        height: 27vh;
+        height: 25vh;
     }
 }
