@@ -20,7 +20,8 @@ function Home() {
     
       <div className='w-full md:w-3/4 m-auto p-2'>
         <h4 className='italic text-[##5f6d80] text-lg font-extralight'>
-          Omeglerr is a free chat room and Video Calling room that allows you to connect with millions of people anonymously. No login is required, just start chatting with single click.
+          Omeglerr is a free chat and Video Calling room that allows you to connect with millions of people anonymously. No login is required, just start chatting with single click.
+          Online video calling with strangers
         </h4>
       </div>
 
@@ -52,11 +53,16 @@ function Home() {
                 <h1 className='text-orange-600 font-bold text-xl'>Make new Friends ! </h1>
                 <p className='text-gray-500 '>Talk with strangers  <span className='font-bold'>anonymously</span> and Make your new friends !
                   <br /> Where video calling meets genuine connections. Here, privacy isn't just a policy, It's a <span className='font-bold'>Promise. </span>Our platform offers the magic of random connections, wrapped in the security of absolute privacy.
+                  Free video calling with strangers | online video call with strangers | random video call to strangers
                 </p>
               </div>
           </div>
         </div>
+
       </div>
+
+
+      
 
       <div className='flex flex-col items-center mt-4 gap-1'>
         <Link href={'/terms'} style={{textDecoration:"underline", color:"blue" }}>Terms of Use </Link>
@@ -68,3 +74,37 @@ function Home() {
 }
 
 export default Home;
+
+
+
+// chat with strangers video call
+// random chat video call
+// online video calling to strangers
+// online video call to strangers
+// online video calling with strangers
+// online video call with strangers
+// video call online strangers
+// online video call strangers
+// stranger video chat
+// video chat app for strangers
+// online video calling chat
+// free video calling with strangers
+// chat random call
+// talk to strangers site
+// website for chat with strangers
+// talk to strangers website
+// video chat with strangers free app
+// random video call to strangers
+// video calling to strangers
+// talk with stranger video call
+// app to chat with strangers
+// stranger video calling website
+// random video call with strangers
+// chat talk to stranger
+// chat talk to strangers
+// talk to strangers online video
+// talking to strangers online video
+// stranger video call site
+// talk to strangers with video online
+// live chat with strangers app
+

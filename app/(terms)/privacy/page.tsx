@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 
 export const metadata:Metadata = {
     title: 'Privacy Policy - Omeglerr',
-    description: 'Omeglerr Privacy Policy',
+    description: 'Omeglerr Privacy policy',
 }
 
 function page() {

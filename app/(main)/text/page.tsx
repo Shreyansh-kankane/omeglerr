@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Chatting - Omeglerr',
-  description: 'Chatting with strangers on Omeglerr',
+  description: 'Chat with people | talk with stranger | chatting with people | free chat',
 }
 
 function page() {

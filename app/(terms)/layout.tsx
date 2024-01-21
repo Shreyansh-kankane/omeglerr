@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Omeglerr - terms and conditions',
-  description: 'Omeglerr is a platform that connects people from different parts of the world to chat with each other.',
+  description: 'Omeglerr terms and conditions',
 }
 
 export default function RootLayout({

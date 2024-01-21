@@ -8,7 +8,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'ViChat - Omeglerr',
-  description: 'Video chatting with strangers on Omeglerr',
+  description: 'free video calling | talk with stranger | video call | random call',
 }
 
 

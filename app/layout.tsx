@@ -6,9 +6,9 @@ import { ModalProvider } from '@/context/ModalProvider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://omeglerr.netlify.app/"),
+  metadataBase: new URL("https://omeglerr.com/"),
   title: 'Omeglerr - Connecting lives, Connecting minds beyond borders',
-  description: 'Omeglerr is a platform that connects people from different parts of the world to chat with each other.',
+  description: 'Omeglerr connects people worldwide through video chat. Enjoy random video calling with strangers, Chat with strangers, and experience the joy of meeting new people online. Free and easy to use!',
 }
 
 export default function RootLayout({
