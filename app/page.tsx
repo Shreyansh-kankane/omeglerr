@@ -1,17 +1,17 @@
 "use client"
 import React from 'react'
 import Brand from '@/components/Brand'
-import Carousel from 'react-material-ui-carousel'
 import Link from 'next/link'
 import { useModal } from '@/hooks/use-modal-store'
 import Image from 'next/image'
 
 function Home() {
 
-  const { onOpen } = useModal();
+  const { onOpen } = useModal(); 
 
   return (
     <div className='w-full h-full'>
+
       <Brand />
       <div className='text-center mt-2'>
         <p className='text-[#5f6d80] italic '>The most trustable Online Chatting Platform to help people connect <span className='font-bold'>anonymously</span> </p>
@@ -40,27 +40,9 @@ function Home() {
       <div className='flex flex-col lg:flex-row w-full lg:h-1/2 p-4 md:px-16 gap-5'>
         
         <div className='w-full lg:w-1/2 h-full lg:h-1/2'>
-          <Carousel
-            className='w-full h-full'
-            animation='fade'
-            indicators={false}
-            autoPlay={true}
-            interval={3000}
-            navButtonsAlwaysVisible={false}
-            navButtonsProps={{
-              style: {
-                backgroundColor: '#3c99fc',
-                color: '#fff',
-                borderRadius: 0,
-              }
-            }}
-          >
-            <img src='/vichat.png' alt='Video_calling' className='w-full h-full object-cover'/>
-            <img src='/conversation.png' alt='Chatting_room' className='w-full h-full object-cover'/>
-          </Carousel>
+          <div className='w-full h-full content'/>
         </div>
           
-         {/*Carousel cards horizontal scroll  */}
         <div className='w-full h-full lg:w-1/2 lg:h-1/2'>
             <div className='mx-auto w-full h-full rounded-lg border shadow-2xl bg-white '>
               <div className='flex flex-col items-center bg-gray-100 border-none p-2'>

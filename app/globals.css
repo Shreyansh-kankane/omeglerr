@@ -13,3 +13,28 @@
         scrollbar-width: none;  /* Firefox */
     }
 }
+
+.content{
+    height: 50vh;
+    width: 100%;
+    background-image: url('/conversation.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    animation-name: animate;
+    animation-direction: alternate-reverse;
+    animation-play-state: running;
+    animation-timing-function: steps(1);
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animate {
+    0%, 100%{
+        background-image: url('/conversation.png');
+    }
+    50%{
+        background-image: url('/vichat.png');
+    }
+}
