@@ -40,7 +40,7 @@ function Home() {
       <div className='flex flex-col lg:flex-row w-full lg:h-1/2 p-4 md:px-16 gap-5'>
         
         <div className='w-full lg:w-1/2 h-full lg:h-1/2'>
-          <div className='w-full h-full content'/>
+          <div className='content w-full h-full'/>
         </div>
           
         <div className='w-full h-full lg:w-1/2 lg:h-1/2'>
