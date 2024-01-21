@@ -50,23 +50,12 @@ function page() {
                 </p>
 
             </div>
-            <div className='mt-4'>
-                <h2 className='text-lg font-bold'>Acceptance of terms</h2>
-                <p className='mt-3'>
-                    By accessing or using Omeglerr ("the Service"), you agree to be bound by these terms and conditions. If you do not agree with any part of these terms, you must not use the Service.
-                </p>
-            </div>
+
             <div className='mt-4'>
                 <h2 className='text-lg font-bold'>Security and Privacy</h2>
                 <p className='mt-3'>
                 Omeglerr prioritizes user security and privacy.
 User data is handled in accordance with our <Link href="/privacy" style={{textDecoration:"underline",color:"blue"}} >Privacy Policy.</Link>
-                </p>
-            </div>
-            <div className='mt-4'>
-                <h2 className='text-lg font-bold'>Acceptance of terms</h2>
-                <p className='mt-3'>
-                    By accessing or using Omeglerr ("the Service"), you agree to be bound by these terms and conditions. If you do not agree with any part of these terms, you must not use the Service.
                 </p>
             </div>
             <div className='mt-4'>
