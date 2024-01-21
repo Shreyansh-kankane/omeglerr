@@ -9,8 +9,8 @@ export const metadata:Metadata = {
 
 function page() {
   return (
-        <div className='flex flex-col gap-3 mx-16'>
-            <div className='h-80 flex justify-center items-center rounded-lg bg-slate-200'>
+        <div className='flex flex-col gap-3 px-5 md:px-10 lg:px-16'>
+            <div className='h-[33vh] md:h-[42vh] lg:h-[50vh] flex justify-center items-center rounded-lg bg-slate-200'>
                 <h1 className='font-bold text-3xl text-slate-500'>Terms of Use</h1>
             </div> 
 
