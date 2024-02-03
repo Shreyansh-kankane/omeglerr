@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import AdsenseComp from './AdsenseComp'
+// import AdsenseComp from './AdsenseComp'
 // import {IoMdSettings} from 'react-icons/io'
 import Image from 'next/image'
 
@@ -9,7 +9,7 @@ function Sidebar({width}:{width:string}) {
     <div className={`hidden md:flex flex-col ${width} bg-[#e8ded2] overflow-hidden`}>
       {/* card */}
 
-      <AdsenseComp />
+      {/* <AdsenseComp /> */}
 
       <div className='w-full h-2/3 m-3 p-4 rounded-md border shadow-xl bg-white'>
         <div className='flex flex-col items-center bg-gray-100 border-none p-2'>
