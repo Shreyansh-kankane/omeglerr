@@ -74,8 +74,8 @@ Make sure you have the necessary dependencies installed:
 
 Clone the repository:
 ```bash
-git clone https://github.com/Shreyansh-kankane/omeglerr/Omeglerr.git
-cd Omeglerr
+git clone https://github.com/Shreyansh-kankane/omeglerr/omeglerr.git
+cd omeglerr
 ```
 
 #### For Client:
@@ -118,12 +118,12 @@ npm start
 ## <span id="contributors">Contributors</span>
 
 <a href="https://github.com/Shreyansh-kankane/omeglerr/graphs/contributors">
-  <img src="https://media.licdn.com/dms/image/D4D03AQFmB6Y6N9hzVQ/profile-displayphoto-shrink_800_800/0/1685289889853?e=1713398400&v=beta&t=izR7z311mETJlukn_pmDdrb515ZDt2nfCM3OYB7Adtw" />
+  <img src="https://media.licdn.com/dms/image/D4D03AQFmB6Y6N9hzVQ/profile-displayphoto-shrink_800_800/0/1685289889853?e=1713398400&v=beta&t=izR7z311mETJlukn_pmDdrb515ZDt2nfCM3OYB7Adtw"  style="width: 90px; height: 90px; border-radius: 50%;"/>
 </a>
 
 ## <span id="license">License</span>
 
-This project is licensed under the [MIT License](https://opensource.org/license/mit/) - see the [LICENSE.md](https://github.com/Shreyansh-kankane/omeglerr/cds-website/blob/main/LICENSE) file for details.
+This project is licensed under the [MIT License](https://opensource.org/license/mit/)
 
 <!-- ## <span id="acknowledgments">Acknowledgments</span>
 - https://web3js.readthedocs.io/en/v1.10.0/
