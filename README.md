@@ -9,23 +9,23 @@
 <br>
 
 <div align="center">
-<a href="https://github.com/Shreyansh-kankane/omeglerrgraphs/contributors" style="margin: 0 5px;">
-    <img alt="Contributors" src="https://img.shields.io/github/contributors/CodeDeployingSquad/Omeglerr?label=Contributors&color=blue">
+<a href="https://github.com/Shreyansh-kankane/omeglerr/graphs/contributors" style="margin: 0 5px;">
+    <img alt="Contributors" src="https://img.shields.io/github/contributors/Shreyansh-Kankane/omeglerr?label=Contributors&color=blue">
 </a>
 <a href="https://github.com/Shreyansh-kankane/omeglerr/graphs/commit-activity" style="margin: 0 5px;">
-    <img alt="Commits" src="https://img.shields.io/github/commit-activity/t/CodeDeployingSquad/Omeglerr?label=Commits&color=orange">
+    <img alt="Commits" src="https://img.shields.io/github/commit-activity/t/Shreyansh-kankane/omeglerr?label=Commits&color=orange">
 </a>
 <a href="https://github.com/Shreyansh-kankane/omeglerr/pulls" style="margin: 0 5px;">
-    <img alt="PRs Open" src="https://img.shields.io/github/issues-pr-raw/CodeDeployingSquad/Omeglerr?label=PRs%20Open&color=brightgreen">
+    <img alt="PRs Open" src="https://img.shields.io/github/issues-pr-raw/Shreyansh-kankane/omeglerr?label=PRs%20Open&color=brightgreen">
 </a>
 <a href="https://github.com/Shreyansh-kankane/omeglerr/issues" style="margin: 0 5px;">
-    <img alt="Issues Open" src="https://img.shields.io/github/issues-raw/CodeDeployingSquad/Omeglerr?label=Issues%20Open&color=red">
+    <img alt="Issues Open" src="https://img.shields.io/github/issues-raw/Shreyansh-kankane/omeglerr?label=Issues%20Open&color=red">
 </a>
 <a href="https://github.com/Shreyansh-kankane/omeglerr/network/members" style="margin: 0 5px;">
-    <img alt="Forks" src="https://img.shields.io/github/forks/CodeDeployingSquad/Omeglerr?label=Forks&color=lightgrey">
+    <img alt="Forks" src="https://img.shields.io/github/forks/Shreyansh-kankane/omeglerr?label=Forks&color=lightgrey">
 </a>
 <a href="https://github.com/Shreyansh-kankane/omeglerr/stargazers" style="margin: 0 5px;">
-    <img alt="Stars" src="https://img.shields.io/github/stars/CodeDeployingSquad/Omeglerr?label=Stars&color=yellow">
+    <img alt="Stars" src="https://img.shields.io/github/stars/Shreyansh-kankane/omeglerr?label=Stars&color=yellow">
 </a>
 </div>
 
