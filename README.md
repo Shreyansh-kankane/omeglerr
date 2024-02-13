@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <a href="https://omeglerr.com/">
+    <img alt="Omeglerr" title="Omeglerr" src="https://omeglerr.com/_ipx/w_64,q_75/%2Fomegler.png?url=%2Fomegler.png&w=64&q=75" width="80">
+  </a>
+</p> 
+<h1 align="center"> Omeglerr </h1> 
+<h4 align="center"> Connecting Lives, Connecting minds beyond borders </h4>
 
-## Getting Started
+<br>
 
-First, run the development server:
+<div align="center">
+<a href="https://github.com/Shreyansh-kankane/omeglerrgraphs/contributors" style="margin: 0 5px;">
+    <img alt="Contributors" src="https://img.shields.io/github/contributors/CodeDeployingSquad/Omeglerr?label=Contributors&color=blue">
+</a>
+<a href="https://github.com/Shreyansh-kankane/omeglerr/graphs/commit-activity" style="margin: 0 5px;">
+    <img alt="Commits" src="https://img.shields.io/github/commit-activity/t/CodeDeployingSquad/Omeglerr?label=Commits&color=orange">
+</a>
+<a href="https://github.com/Shreyansh-kankane/omeglerr/pulls" style="margin: 0 5px;">
+    <img alt="PRs Open" src="https://img.shields.io/github/issues-pr-raw/CodeDeployingSquad/Omeglerr?label=PRs%20Open&color=brightgreen">
+</a>
+<a href="https://github.com/Shreyansh-kankane/omeglerr/issues" style="margin: 0 5px;">
+    <img alt="Issues Open" src="https://img.shields.io/github/issues-raw/CodeDeployingSquad/Omeglerr?label=Issues%20Open&color=red">
+</a>
+<a href="https://github.com/Shreyansh-kankane/omeglerr/network/members" style="margin: 0 5px;">
+    <img alt="Forks" src="https://img.shields.io/github/forks/CodeDeployingSquad/Omeglerr?label=Forks&color=lightgrey">
+</a>
+<a href="https://github.com/Shreyansh-kankane/omeglerr/stargazers" style="margin: 0 5px;">
+    <img alt="Stars" src="https://img.shields.io/github/stars/CodeDeployingSquad/Omeglerr?label=Stars&color=yellow">
+</a>
+</div>
+
+<br>
+<br>
+
+<div align="center">
+  <img alt="Omeglerr" title="Omeglerr" src="https://i.postimg.cc/zGjLyrrC/Screenshot-2024-02-04-at-1-36-20-AM.png" width="100%" style="border: 1px solid gray; border-radius: 5px; display: block; margin: 0 auto;">
+</div>
+<br>
+
+## Table of Contents
+
+- [Table of Contents](#table-of-contents)
+- [ Introduction ](#-introduction-)
+- [ Getting Started ](#-getting-started-)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+    - [For Client:](#for-client)
+    - [For Server:](#for-server)
+- [Built With](#built-with)
+- [Contributing](#contributing)
+- [Contributors](#contributors)
+- [License](#license)
+
+## <span id="-introduction-"> Introduction </span>
+
+**Omeglerr** is a platform that facilitates connections and conversations across borders, bringing people together in a virtual space.
+
+#AI #virtualconnections #socialplatform
+
+**P.S.** Want to contribute? We're all ears! 
+
+
+## <span id="-getting-started-"> Getting Started </span>
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+Make sure you have the necessary dependencies installed:
+
+- Node.js
+- Nodemon (for server development)
+
+### Installation
+
+Clone the repository:
+```bash
+git clone https://github.com/Shreyansh-kankane/omeglerr/Omeglerr.git
+cd Omeglerr
+```
+
+#### For Client:
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### For Server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Install dependencies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+cd server
+npm install
+```
 
-## Learn More
+Run the server:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## <span id="built-with">Built With</span>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+ - Next.js
+ - Express
+ - Socket.io
+ - WebRTC
+ - Tailwind
 
-## Deploy on Vercel
+## <span id="contributors">Contributors</span>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<a href="https://github.com/Shreyansh-kankane/omeglerr/graphs/contributors">
+  <img src="https://media.licdn.com/dms/image/D4D03AQFmB6Y6N9hzVQ/profile-displayphoto-shrink_800_800/0/1685289889853?e=1713398400&v=beta&t=izR7z311mETJlukn_pmDdrb515ZDt2nfCM3OYB7Adtw" />
+</a>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## <span id="license">License</span>
+
+This project is licensed under the [MIT License](https://opensource.org/license/mit/) - see the [LICENSE.md](https://github.com/Shreyansh-kankane/omeglerr/cds-website/blob/main/LICENSE) file for details.
+
+<!-- ## <span id="acknowledgments">Acknowledgments</span>
+- https://web3js.readthedocs.io/en/v1.10.0/
+- https://ethereum.org/
+- https://polygon.technology/
+- https://mumbai.polygonscan.com/
+- https://winterofcode.com/ -->
