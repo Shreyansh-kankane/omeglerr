@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ModalProvider } from '@/context/ModalProvider'
+import DatadogInit from '@/components/DatadogInit'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,6 +26,7 @@ export default function RootLayout({
      
       </head>
       <body className={inter.className}>
+        <DatadogInit />
         <ModalProvider />
         {children}
       </body>

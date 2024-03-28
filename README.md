@@ -118,7 +118,7 @@ npm start
 ## <span id="contributors">Contributors</span>
 
 <a href="https://github.com/Shreyansh-kankane/omeglerr/graphs/contributors">
-  <img src="https://media.licdn.com/dms/image/D4D03AQFmB6Y6N9hzVQ/profile-displayphoto-shrink_800_800/0/1685289889853?e=1713398400&v=beta&t=izR7z311mETJlukn_pmDdrb515ZDt2nfCM3OYB7Adtw"  style="width: 90px; height: 90px; border-radius: 50%;"/>
+  <img src="https://media.licdn.com/dms/image/D4D03AQFmB6Y6N9hzVQ/profile-displayphoto-shrink_800_800/0/1685289889853?e=1713398400&v=beta&t=izR7z311mETJlukn_pmDdrb515ZDt2nfCM3OYB7Adtw"  style="width: 90px; height: 90px; border-radius:50%;"/>
 </a>
 
 ## <span id="license">License</span>

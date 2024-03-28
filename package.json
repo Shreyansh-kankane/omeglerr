@@ -10,6 +10,7 @@
     "server": "nodemon server.js"
   },
   "dependencies": {
+    "@datadog/browser-rum": "^5.13.0",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.3",
