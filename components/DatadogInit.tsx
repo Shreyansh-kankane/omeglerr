@@ -2,8 +2,8 @@
 import { datadogRum } from '@datadog/browser-rum';
 
 datadogRum.init({
-    applicationId: '2053292c-92bc-43cf-8237-04ccaacff61a',
-    clientToken: 'pub677cc4c2221ae4bb3fefd77457fe3206',
+    applicationId: '873e7e49-6f6a-426f-846d-e35824bae07b',
+    clientToken: 'pub33399532166e22a2964cfa3ed897d7ae',
     site: 'us5.datadoghq.com',
     service: 'wep',
     env: '<ENV_NAME>',
