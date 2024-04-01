@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/VideoPlayer.jsx", "components/Chat.jsx", "components/DatadogInit.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/VideoPlayer.jsx", "components/Chat.jsx", "components/DatadogInit.jsx", "app/layout.tsx"],
   "exclude": ["node_modules"]
 }

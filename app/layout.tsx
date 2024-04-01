@@ -2,7 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ModalProvider } from '@/context/ModalProvider'
-import DatadogInit from '@/components/DatadogInit'
+// import DatadogInit from '@/components/DatadogInit'
+import DatadogScript from '@/components/DatadogScript'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}:{
   children: React.ReactNode
 }) {
   return (
@@ -23,13 +24,16 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="google-adsense-account" content="ca-pub-7951236970634483"/>
         {/* { process.env.NODE_ENV === 'production' && <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7951236970634483" crossOrigin="anonymous"></script>} */}
-     
+        
       </head>
       <body className={inter.className}>
-        <DatadogInit />
+        
+        {/* <DatadogInit /> */}
+        <DatadogScript />
         <ModalProvider />
         {children}
       </body>
     </html>
   )
 }
+
